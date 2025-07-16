@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual Environments
+venv/
+env/
+.venv/
+backend/venv/
+
+# Environment & Secrets
+.env
+*.env
+*api_key*
+*secret*
+
+# Audio Files
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+*.mid
+*.midi
+
+# Data & Models
+*.pkl
+*.h5
+*.pth
+*.npz
+*.csv
+/data/
+/models/
+
+# Logs & Cache
+*.log
+logs/
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Temporary
+tmp/
+temp/
+*.tmp
