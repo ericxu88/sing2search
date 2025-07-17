@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import health
+from app.api.routes import health, songs, search
 import os
 from dotenv import load_dotenv
 
@@ -23,6 +23,8 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix="/api/v1", tags=["health"])
+app.include_router(songs.router, prefix="/api/v1/songs", tags=["songs"])
+app.include_router(search.router, prefix="/api/v1/search", tags=["search"])
 
 @app.get("/")
 async def root():

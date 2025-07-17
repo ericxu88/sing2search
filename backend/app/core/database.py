@@ -71,13 +71,20 @@ class PineconeClient:
         
         try:
             stats = self.index.describe_index_stats()
+
+            namespaces_dict = {}
+            if stats.namespaces:
+                for ns_name, ns_summary in stats.namespaces.items():
+                    namespaces_dict[ns_name] = {
+                        "vector_count": ns_summary.vector_count
+                    }
             return {
                 "total_vectors": stats.total_vector_count,
                 "dimension": stats.dimension,
-                "namespaces": dict(stats.namespaces) if stats.namespaces else {}
+                "namespaces": namespaces_dict
             }
         
         except Exception as e:
             print(f" Error getting stats for index: {str(e)}")
-            return {}
+            return {"error": str(e)}
         

@@ -13,8 +13,6 @@ class Settings(BaseSettings):
     sample_rate: int = 22050
     max_audio_length: int = 30
 
-    class Config:
-        env_file = ".env"
-        case_sensitive = False
+    model_config = {"env_file": ".env", "case_sensitive": False}
 
 settings = Settings()
