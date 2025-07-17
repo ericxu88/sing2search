@@ -1,8 +1,9 @@
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 from typing import Optional
 
 class Settings(BaseSettings):
     pinecone_api_key: Optional[str] = None
+    pinecone_environment: Optional[str] = None
     pinecone_index_name: str = "sing2search-index"
 
     api_host: str = "0.0.0.0"
